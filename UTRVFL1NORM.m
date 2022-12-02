@@ -1,4 +1,4 @@
-function [results,time]=UTRVFL1NORM(train,test,L,c1,c3,w_vec,b_vec,e,Uni)
+function [r,time]=UTRVFL1NORM(train,test,L,c1,c3,w_vec,b_vec,e,Uni)
 %w_vec is weight vector
     %b_vec is bias vector
     %c1 is penalty parameter 
@@ -135,7 +135,7 @@ for i = 1:size(ytest1,1)
         match = match+1;
     end;
 end;
-confmat=confusionmat(y,ytest,'order',[1,0,-1]);
+confmat=confusionmat(y1,classifier,'order',[1,0,-1]);
 TP=confmat(1,1);
 TN=confmat(2,2);
 FP=confmat(2,1);
